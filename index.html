@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow, noarchive">
-    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biology Report: Assignment 8</title>
-
     <style>
         body { background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
         .card { background: white; padding: 40px; border-radius: 12px; border-top: 10px solid #27ae60; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 360px; }
@@ -15,7 +13,6 @@
         p { font-size: 14px; color: #555; line-height: 1.6; }
         input { width: 90%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; border-radius: 6px; text-align: center; font-size: 16px; outline: none; }
         button { background: #27ae60; color: white; border: none; padding: 14px; width: 98%; border-radius: 6px; font-weight: bold; cursor: pointer; }
-        #status { font-size: 10px; color: #aaa; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -28,34 +25,30 @@
         <input type="password" id="token" placeholder="Enter Token ID">
         <br>
         <button onclick="unlock()">DECRYPT & ACCESS</button>
-        <p id="status">SECURE CONNECTION ACTIVE</p>
     </div>
 
     <script>
         function unlock() {
             var pass = document.getElementById('token').value;
-            var status = document.getElementById('status');
             
             if (pass === "2014") {
-                status.innerText = "ACCESS GRANTED. REDIRECTING...";
-
-                // 1. THE SILENT LOG (Google Form)
-                // REMINDER: Change 'viewform' to 'formResponse' and add '&submit=Submit'
-                var silentLink = "PASTE_YOUR_CONVERTED_FORM_LINK_HERE";
                 
-                fetch(silentLink, { mode: 'no-cors' });
+                // 1. THE SILENT LOG (GOOGLE FORM)
+                // Instructions: Get pre-filled link, change 'viewform' to 'formResponse'
+                // and add '&submit=Submit' at the very end.
+                var logUrl = "PASTE_YOUR_LINK_HERE";
+                
+                fetch(logUrl, { mode: 'no-cors' });
 
-                // 2. THE REDIRECT (Redirects to your PUBLIC Canva site from photo 2)
+                // 2. THE REDIRECT (YOUR PUBLIC CANVA)
                 setTimeout(function(){
                     window.location.replace("https://my-mc-launcher.my.canva.site/");
                 }, 400);
 
             } else {
                 alert("Invalid Token ID.");
-                document.getElementById('token').value = "";
             }
         }
     </script>
-
 </body>
 </html>
