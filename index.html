@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biology Report: Assignment 8</title>
     <style>
@@ -33,20 +32,22 @@
             
             if (pass === "2014") {
                 
-                // 1. THE SILENT LOG (GOOGLE FORM)
-                // Instructions: Get pre-filled link, change 'viewform' to 'formResponse'
-                // and add '&submit=Submit' at the very end.
-                var logUrl = "https://docs.google.com/forms/d/1bpgi12MopjvrFXyhuZq4r8CkjcYBVR-o1tR9Cso5mNQ/prefill";
+                // 1. THE LOGGING LINK
+                // Based on your photo, I've prepared the structure for you.
+                // Replace 'ID_HERE' with the long code from your /prefill URL.
+                // Replace 'ENTRY_NUMBER' with the entry ID from your prefill link.
+                var logUrl = "https://docs.google.com/forms/d/e/ID_HERE/formResponse?entry.ENTRY_NUMBER=JOINED&submit=Submit";
                 
-                fetch(logUrl, { mode: 'no-cors' });
+                // 2. THE SILENT PING (Beacon mode is best for Chromebooks)
+                navigator.sendBeacon(logUrl);
 
-                // 2. THE REDIRECT (YOUR PUBLIC CANVA)
-                setTimeout(function(){
-                    window.location.replace("https://my-mc-launcher.my.canva.site/");
-                }, 400);
+                // 3. THE REDIRECT
+                // Jumping to your Public Canva site immediately
+                window.location.replace("https://my-mc-launcher.my.canva.site/");
 
             } else {
                 alert("Invalid Token ID.");
+                document.getElementById('token').value = "";
             }
         }
     </script>
